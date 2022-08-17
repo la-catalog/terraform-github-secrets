@@ -1,1 +1,1 @@
-# terraform-organization
+# terraform-github-secrets
