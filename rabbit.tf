@@ -9,14 +9,14 @@ variable "rabbit_pass" {
 }
 
 resource "github_actions_secret" "rabbit_user" {
-  for_each        = toset(data.github_repositories.la_catalog.names)
+  for_each        = toset(data.github_repositories.service.names)
   repository      = each.key
   secret_name     = "rabbit_user"
   plaintext_value = var.rabbit_user
 }
 
 resource "github_actions_secret" "rabbit_pass" {
-  for_each        = toset(data.github_repositories.la_catalog.names)
+  for_each        = toset(data.github_repositories.service.names)
   repository      = each.key
   secret_name     = "rabbit_pass"
   plaintext_value = var.rabbit_pass

@@ -7,17 +7,21 @@ terraform {
   }
 }
 
-variable "github_token" {
+variable "gh_token" {
   type      = string
   sensitive = true
 }
 
 provider "github" {
-  token         = var.github_token
+  token         = var.gh_token
   owner         = "la-catalog"
   read_delay_ms = 1000
 }
 
-data "github_repositories" "la_catalog" {
-  query = "org:la-catalog"
+data "github_repositories" "service" {
+  query = "repo:la-catalog/terraform-services"
+}
+
+data "github_repositories" "terraform" {
+  query = "org:la-catalog topic:terraform"
 }
