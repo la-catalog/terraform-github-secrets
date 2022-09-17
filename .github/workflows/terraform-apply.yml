@@ -9,7 +9,7 @@ jobs:
   apply:
     runs-on: self-hosted
     env:
-      GITHUB_TOKEN: ${{ secrets.gh_token }}
+      gh_token: ${{ secrets.gh_token }}
     steps:
       - uses: actions/checkout@v3
 
