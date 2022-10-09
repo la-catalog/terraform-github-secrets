@@ -1,11 +1,11 @@
-variable "meili_pass" {
+variable "meili_key" {
   type      = string
   sensitive = true
 }
 
-resource "github_actions_secret" "meili_pass" {
+resource "github_actions_secret" "meili_key" {
   for_each        = toset(["terraform-services", "terraform-github-secrets"])
   repository      = each.key
-  secret_name     = "meili_pass"
-  plaintext_value = var.meili_pass
+  secret_name     = "meili_key"
+  plaintext_value = var.meili_key
 }
