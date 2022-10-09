@@ -21,3 +21,7 @@ provider "github" {
 data "github_repositories" "terraform" {
   query = "org:la-catalog topic:terraform"
 }
+
+data "github_repositories" "python_package" {
+  query = "org:la-catalog topic:python topic:package"
+}
